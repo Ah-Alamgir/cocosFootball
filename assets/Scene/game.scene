@@ -189,7 +189,7 @@
     "_priority": 0,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 480.00000000000006,
+    "_orthoHeight": 598.2463465553236,
     "_near": 0,
     "_far": 1000,
     "_color": {
@@ -1198,7 +1198,7 @@
       "y": 0
     },
     "_angularVelocity": 0,
-    "_fixedRotation": true,
+    "_fixedRotation": false,
     "_id": "22O7gzv/dOB7gU8vr6AUmk"
   },
   {
@@ -1236,7 +1236,6 @@
     "ball": {
       "__id__": 31
     },
-    "degree": 0,
     "_id": "61I4KsfWNExLQdYTpetxsT"
   },
   {
