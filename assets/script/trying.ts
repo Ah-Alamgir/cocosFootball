@@ -1,4 +1,4 @@
-import { _decorator, Collider, Collider2D, Component,  EventMouse, ICollisionEvent, Input, input, Node, physics, Quat, RigidBody2D, UITransform, v2, v3,  Vec3 } from 'cc';
+import { _decorator, CircleCollider2D, Collider, Collider2D, Component,  EventMouse, ICollisionEvent, Input, input, Node, physics, Quat, RigidBody2D, UITransform, v2, v3,  Vec3 } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('trying')
@@ -24,27 +24,10 @@ export class trying extends Component {
 
 
 
-        // this.ball.on('collisionEnter', this.onCollisionEnter, this);
-  
 
-        let collider = this.node.getComponent(Collider2D);
-    // Listening to 'onCollisionStay' Events
-        collider.on('onCollisionStay', this.onCollision, this);
-    }
-
-    onCollision (event: ICollisionEvent) {
-        console.log(event.type, event);
     }
 
 
-
-    // onCollisionEnter (event: physics.ICollisionEvent) {
-    //     let other = event.selfCollider;
-    //     console.log(other)
-    //     if (other.node.name === 'player') {
-    //         console.log(other);
-    //     }
-    // }
 
 
     public angle;
