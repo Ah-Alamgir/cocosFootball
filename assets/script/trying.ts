@@ -1,12 +1,17 @@
-import { _decorator, Component, EventMouse, Input, input, log, misc, Node, Quat, RigidBody2D, UITransform, v2, v3, Vec2, Vec3 } from 'cc';
+import { _decorator, Collider, Collider2D, Component,  EventMouse, ICollisionEvent, Input, input, Node, physics, Quat, RigidBody2D, UITransform, v2, v3,  Vec3 } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('trying')
 export class trying extends Component {
 
-
+    // attach this script to ball node which you want to shoot
+    
     @property(Node)
     public ball: Node = null;
+    @property(Node)
+    public player:Node = null;
+
+
 
     public speed = 100; // the speed of the ball
 
@@ -15,15 +20,31 @@ export class trying extends Component {
 
 
     start() {
-        input.on(Input.EventType.MOUSE_DOWN,this.getangle, this )
+        input.on(Input.EventType.MOUSE_DOWN,this.getangle, this );
+
+
+
+        // this.ball.on('collisionEnter', this.onCollisionEnter, this);
+  
+
+        let collider = this.node.getComponent(Collider2D);
+    // Listening to 'onCollisionStay' Events
+        collider.on('onCollisionStay', this.onCollision, this);
     }
 
-    update(deltaTime: number) {
-        
+    onCollision (event: ICollisionEvent) {
+        console.log(event.type, event);
     }
 
 
 
+    // onCollisionEnter (event: physics.ICollisionEvent) {
+    //     let other = event.selfCollider;
+    //     console.log(other)
+    //     if (other.node.name === 'player') {
+    //         console.log(other);
+    //     }
+    // }
 
 
     public angle;
