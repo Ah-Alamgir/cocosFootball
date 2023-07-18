@@ -1,4 +1,4 @@
-import { _decorator, CircleCollider2D, Collider, Collider2D, Component,  EventMouse, ICollisionEvent, Input, input, Node, physics, Quat, RigidBody2D, UITransform, v2, v3,  Vec3 } from 'cc';
+import { _decorator, CircleCollider2D, Collider, Collider2D, Component,  Contact2DType,  EventMouse, ICollisionEvent,  Input, input, IPhysics2DContact, Node, physics, Quat, RigidBody2D, UITransform, v2, v3,  Vec3 } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('trying')
@@ -22,10 +22,27 @@ export class trying extends Component {
     start() {
         input.on(Input.EventType.MOUSE_DOWN,this.getangle, this );
 
+        this.ball.getComponent(Collider2D).on(Contact2DType.BEGIN_CONTACT, this.onColide, this )
+        FBInstant.getSupportedAPIs()
 
 
 
     }
+
+
+    onColide(selfColider: Collider2D, otherColider: Collider2D, contant: IPhysics2DContact | null){
+       if(otherColider.node.name == 'player'){
+        this.ball.getComponent(RigidBody2D).sleep();
+       }
+    }
+
+
+
+
+
+
+
+
 
 
 
@@ -55,7 +72,6 @@ export class trying extends Component {
             this.ball.setRotation(new Quat(0,0,0,0))
             this.ball.setPosition(0,-333)
             this.ball.getComponent(RigidBody2D).sleep();
-            console.log(this.ball.getRotation())
             
         },3000);
         
