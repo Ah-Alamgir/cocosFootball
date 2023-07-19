@@ -2,12 +2,12 @@
   "ver": "2.0.3",
   "importer": "animation-clip",
   "imported": true,
-  "uuid": "050bbdbc-7900-4fda-a562-1dcc0c980991",
+  "uuid": "64245394-68a3-4b10-b2b1-ff10034d0c64",
   "files": [
     ".cconb"
   ],
   "subMetas": {},
   "userData": {
-    "name": "move2"
+    "name": "countAnim"
   }
 }

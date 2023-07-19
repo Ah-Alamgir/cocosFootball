@@ -2,12 +2,12 @@
   "ver": "2.0.3",
   "importer": "animation-clip",
   "imported": true,
-  "uuid": "9342c720-1682-4ff5-8bb2-c86fa6a0a7b3",
+  "uuid": "63d0c55f-f33d-4562-bbb5-a4d7eced5ad8",
   "files": [
     ".cconb"
   ],
   "subMetas": {},
   "userData": {
-    "name": "playerMove"
+    "name": "playanim"
   }
 }
